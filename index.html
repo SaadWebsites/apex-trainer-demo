@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APEX — Personal Training & Performance Gym</title>
+  <title>APEX â€” Personal Training & Performance Gym</title>
   <meta name="description" content="One-on-one coaching, small group training and nutrition support in Austin, TX. Book a free consult with APEX Personal Training." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,6 +24,10 @@
   <style>
     body { font-family: "Inter", ui-sans-serif, system-ui; background: #0a0a0b; }
     h1, h2, h3, .font-display { font-family: "Anton", ui-sans-serif, system-ui; letter-spacing: .02em; }
+    /* Auto color-grade: makes any client photo fit the dark theme */
+    .graded { filter: contrast(1.08) saturate(1.05) brightness(.92); }
+    .graded-wrap { position: relative; overflow: hidden; }
+    .graded-wrap::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,11,.18), rgba(10,10,11,.42)); pointer-events: none; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .animate-marquee { animation: marquee 24s linear infinite; }
   </style>
@@ -62,16 +66,16 @@
   </header>
 
   <section class="relative flex min-h-[86vh] items-center overflow-hidden">
-    <img src="assets/img/hero.jpg" data-fallback="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
+    <img src="assets/img/hero.jpg" data-fallback="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80" alt="" class="graded absolute inset-0 h-full w-full object-cover opacity-45" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
     <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30"></div>
     <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink to-transparent"></div>
     <div class="relative mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-      <p class="text-sm font-bold uppercase tracking-[0.3em] text-volt">Personal Training · Austin, TX</p>
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-volt">Personal Training Â· Austin, TX</p>
       <h1 class="mt-5 font-display text-6xl uppercase leading-[0.92] text-white sm:text-7xl lg:text-8xl">
         Stronger<br />every <span class="text-volt">session</span>
       </h1>
       <p class="mt-6 max-w-xl text-lg leading-relaxed text-mist">
-        One-on-one coaching, small group training and nutrition support — built around your body, your schedule and your goals. No guesswork, just progressive results.
+        One-on-one coaching, small group training and nutrition support â€” built around your body, your schedule and your goals. No guesswork, just progressive results.
       </p>
       <div class="mt-9 flex flex-wrap gap-4">
         <a href="book.html" class="rounded-full bg-volt px-8 py-4 text-sm font-bold uppercase tracking-wider text-ink transition-colors hover:bg-white">Book a Free Consult</a>
@@ -87,7 +91,7 @@
           <dd class="mt-1 text-xs font-semibold uppercase tracking-wider text-mist">Coaching experience</dd>
         </div>
         <div>
-          <dt class="font-display text-3xl text-volt sm:text-4xl">4.9★</dt>
+          <dt class="font-display text-3xl text-volt sm:text-4xl">4.9â˜…</dt>
           <dd class="mt-1 text-xs font-semibold uppercase tracking-wider text-mist">From 300+ reviews</dd>
         </div>
       </dl>
@@ -96,8 +100,8 @@
 
   <div class="overflow-hidden border-y border-ink bg-volt py-3">
     <div class="animate-marquee flex w-max gap-10 text-sm font-extrabold uppercase tracking-[0.2em] text-ink">
-      <span>Strength</span><span>·</span><span>Conditioning</span><span>·</span><span>Fat Loss</span><span>·</span><span>Nutrition</span><span>·</span><span>Mobility</span><span>·</span><span>Sport Performance</span><span>·</span>
-      <span>Strength</span><span>·</span><span>Conditioning</span><span>·</span><span>Fat Loss</span><span>·</span><span>Nutrition</span><span>·</span><span>Mobility</span><span>·</span><span>Sport Performance</span><span>·</span>
+      <span>Strength</span><span>Â·</span><span>Conditioning</span><span>Â·</span><span>Fat Loss</span><span>Â·</span><span>Nutrition</span><span>Â·</span><span>Mobility</span><span>Â·</span><span>Sport Performance</span><span>Â·</span>
+      <span>Strength</span><span>Â·</span><span>Conditioning</span><span>Â·</span><span>Fat Loss</span><span>Â·</span><span>Nutrition</span><span>Â·</span><span>Mobility</span><span>Â·</span><span>Sport Performance</span><span>Â·</span>
     </div>
   </div>
 
@@ -105,43 +109,43 @@
     <div class="mx-auto max-w-2xl text-center">
       <p class="text-sm font-bold uppercase tracking-[0.3em] text-volt">Programs</p>
       <h2 class="mt-3 font-display text-4xl uppercase text-white sm:text-5xl">Training that fits your life</h2>
-      <p class="mt-4 text-mist">Pick your format — every session is coached, programmed and tracked. Not sure where to start? Book the free consult.</p>
+      <p class="mt-4 text-mist">Pick your format â€” every session is coached, programmed and tracked. Not sure where to start? Book the free consult.</p>
     </div>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       <article class="group overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-volt/60">
-        <img src="assets/img/program-1.jpg" data-fallback="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Coach guiding a client through a lift" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
+        <img src="assets/img/program-1.jpg" data-fallback="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Coach guiding a client through a lift" class="graded h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="p-6">
           <h3 class="text-xl uppercase text-white">1-on-1 Coaching</h3>
           <p class="mt-2 text-sm leading-relaxed text-mist">Fully personalized programming, hands-on form correction and weekly adjustments.</p>
-          <p class="mt-4 text-sm font-bold text-volt">60 min · $75</p>
-          <a href="book.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-white transition-colors hover:text-volt">Book now <span aria-hidden="true">→</span></a>
+          <p class="mt-4 text-sm font-bold text-volt">60 min Â· $75</p>
+          <a href="book.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-white transition-colors hover:text-volt">Book now <span aria-hidden="true">â†’</span></a>
         </div>
       </article>
       <article class="group overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-volt/60">
-        <img src="assets/img/program-2.jpg" data-fallback="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Strength floor with racks" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
+        <img src="assets/img/program-2.jpg" data-fallback="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Strength floor with racks" class="graded h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="p-6">
           <h3 class="text-xl uppercase text-white">Small Group Training</h3>
           <p class="mt-2 text-sm leading-relaxed text-mist">Max 6 people. Coached strength blocks and circuits at a fraction of the price.</p>
-          <p class="mt-4 text-sm font-bold text-volt">60 min · $35</p>
-          <a href="book.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-white transition-colors hover:text-volt">Book now <span aria-hidden="true">→</span></a>
+          <p class="mt-4 text-sm font-bold text-volt">60 min Â· $35</p>
+          <a href="book.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-white transition-colors hover:text-volt">Book now <span aria-hidden="true">â†’</span></a>
         </div>
       </article>
       <article class="group overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-volt/60">
-        <img src="assets/img/program-3.jpg" data-fallback="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Athlete performing a barbell lift" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
+        <img src="assets/img/program-3.jpg" data-fallback="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Athlete performing a barbell lift" class="graded h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="p-6">
           <h3 class="text-xl uppercase text-white">Strength &amp; Conditioning</h3>
           <p class="mt-2 text-sm leading-relaxed text-mist">Barbell-focused athletic training for power, speed and bulletproof joints.</p>
-          <p class="mt-4 text-sm font-bold text-volt">60 min · $65</p>
-          <a href="book.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-white transition-colors hover:text-volt">Book now <span aria-hidden="true">→</span></a>
+          <p class="mt-4 text-sm font-bold text-volt">60 min Â· $65</p>
+          <a href="book.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-white transition-colors hover:text-volt">Book now <span aria-hidden="true">â†’</span></a>
         </div>
       </article>
       <article class="group overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-volt/60">
-        <img src="assets/img/program-4.jpg" data-fallback="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Healthy prepared meal" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
+        <img src="assets/img/program-4.jpg" data-fallback="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Healthy prepared meal" class="graded h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="p-6">
           <h3 class="text-xl uppercase text-white">Nutrition Coaching</h3>
-          <p class="mt-2 text-sm leading-relaxed text-mist">Habits, macros and meal planning that survives real life — no crash diets.</p>
-          <p class="mt-4 text-sm font-bold text-volt">45 min · $50</p>
-          <a href="book.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-white transition-colors hover:text-volt">Book now <span aria-hidden="true">→</span></a>
+          <p class="mt-2 text-sm leading-relaxed text-mist">Habits, macros and meal planning that survives real life â€” no crash diets.</p>
+          <p class="mt-4 text-sm font-bold text-volt">45 min Â· $50</p>
+          <a href="book.html" class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-white transition-colors hover:text-volt">Book now <span aria-hidden="true">â†’</span></a>
         </div>
       </article>
     </div>
@@ -162,7 +166,7 @@
         <li class="rounded-2xl border border-line bg-ink p-7">
           <span class="font-display text-5xl text-volt">02</span>
           <h3 class="mt-4 text-xl uppercase text-white">Get your custom plan</h3>
-          <p class="mt-2 text-sm leading-relaxed text-mist">We assess movement, talk goals and build a program around your schedule — in-studio, at home or online.</p>
+          <p class="mt-2 text-sm leading-relaxed text-mist">We assess movement, talk goals and build a program around your schedule â€” in-studio, at home or online.</p>
         </li>
         <li class="rounded-2xl border border-line bg-ink p-7">
           <span class="font-display text-5xl text-volt">03</span>
@@ -176,7 +180,7 @@
   <section id="coach" class="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
     <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
       <div class="relative">
-        <img src="assets/img/coach.jpg" data-fallback="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=1000&q=80" alt="Coach Marcus Reed" class="aspect-[4/5] w-full rounded-3xl border border-line object-cover" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
+        <img src="assets/img/coach.jpg" data-fallback="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=1000&q=80" alt="Coach Marcus Reed" class="graded aspect-[4/5] w-full rounded-3xl border border-line object-cover" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="absolute -bottom-5 left-5 rounded-2xl border border-line bg-panel px-5 py-4 shadow-xl">
           <p class="font-display text-2xl text-volt">12+ yrs</p>
           <p class="text-xs font-semibold uppercase tracking-wider text-mist">On the gym floor</p>
@@ -191,10 +195,10 @@
           <span class="rounded-full border border-line px-3 py-1 text-xs font-bold uppercase tracking-wider text-mist">FMS Level 2</span>
         </div>
         <p class="mt-6 leading-relaxed text-mist">
-          I spent years watching people train hard and see nothing change. The problem is never effort — it's the plan. At APEX every program is built from an assessment, not a template, and adjusted every single week based on how you actually recovered and performed.
+          I spent years watching people train hard and see nothing change. The problem is never effort â€” it's the plan. At APEX every program is built from an assessment, not a template, and adjusted every single week based on how you actually recovered and performed.
         </p>
         <p class="mt-4 leading-relaxed text-mist">
-          Whether you're dropping your first 20 lbs, coming back from an injury, or chasing a competition PR — the process is the same: assess, program, coach, repeat.
+          Whether you're dropping your first 20 lbs, coming back from an injury, or chasing a competition PR â€” the process is the same: assess, program, coach, repeat.
         </p>
         <ul class="mt-6 grid gap-2.5 text-sm text-white sm:grid-cols-2">
           <li class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-volt"></span> Fat loss &amp; body recomposition</li>
@@ -222,12 +226,12 @@
             <svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
             <svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
           </div>
-          <blockquote class="mt-4 text-sm leading-relaxed text-mist">"Down 24 lbs in 5 months without living in the gym. The check-ins are what keep me honest — Marcus adjusts the plan whenever life gets crazy."</blockquote>
+          <blockquote class="mt-4 text-sm leading-relaxed text-mist">"Down 24 lbs in 5 months without living in the gym. The check-ins are what keep me honest â€” Marcus adjusts the plan whenever life gets crazy."</blockquote>
           <figcaption class="mt-5 flex items-center gap-3">
             <img src="https://i.pravatar.cc/80?img=32" alt="" class="h-10 w-10 rounded-full" />
             <div>
               <p class="text-sm font-bold text-white">Danielle R.</p>
-              <p class="text-xs text-mist">Lost 24 lbs · 5 months</p>
+              <p class="text-xs text-mist">Lost 24 lbs Â· 5 months</p>
             </div>
           </figcaption>
         </figure>
@@ -239,12 +243,12 @@
             <svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
             <svg viewBox="0 0 20 20" class="h-4 w-4" fill="currentColor"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9L10 1.5z"/></svg>
           </div>
-          <blockquote class="mt-4 text-sm leading-relaxed text-mist">"First time I've deadlifted 405. The programming is stupidly simple but it works — I just show up and do what's on the sheet."</blockquote>
+          <blockquote class="mt-4 text-sm leading-relaxed text-mist">"First time I've deadlifted 405. The programming is stupidly simple but it works â€” I just show up and do what's on the sheet."</blockquote>
           <figcaption class="mt-5 flex items-center gap-3">
             <img src="https://i.pravatar.cc/80?img=12" alt="" class="h-10 w-10 rounded-full" />
             <div>
               <p class="text-sm font-bold text-white">Andre K.</p>
-              <p class="text-xs text-mist">+135 lb deadlift · 8 months</p>
+              <p class="text-xs text-mist">+135 lb deadlift Â· 8 months</p>
             </div>
           </figcaption>
         </figure>
@@ -261,7 +265,7 @@
             <img src="https://i.pravatar.cc/80?img=59" alt="" class="h-10 w-10 rounded-full" />
             <div>
               <p class="text-sm font-bold text-white">Priya S.</p>
-              <p class="text-xs text-mist">Back to sport · 12 months</p>
+              <p class="text-xs text-mist">Back to sport Â· 12 months</p>
             </div>
           </figcaption>
         </figure>
@@ -272,7 +276,7 @@
   <section class="bg-volt">
     <div class="mx-auto flex w-full max-w-7xl flex-col items-center gap-7 px-4 py-16 text-center sm:px-6 lg:px-8">
       <h2 class="font-display text-4xl uppercase leading-tight text-ink sm:text-5xl">Your first session is on us</h2>
-      <p class="max-w-xl text-sm font-semibold text-ink/70">Book a free 30-minute consult — movement assessment, goal talk, and an honest answer on whether we're a fit.</p>
+      <p class="max-w-xl text-sm font-semibold text-ink/70">Book a free 30-minute consult â€” movement assessment, goal talk, and an honest answer on whether we're a fit.</p>
       <a href="book.html" class="rounded-full bg-ink px-9 py-4 text-sm font-bold uppercase tracking-wider text-volt transition-colors hover:bg-panel">Book the free consult</a>
     </div>
   </section>
@@ -299,9 +303,9 @@
       <div>
         <h3 class="text-xs font-bold uppercase tracking-widest text-white">Hours</h3>
         <ul class="mt-4 space-y-2.5 text-sm text-mist">
-          <li>Mon – Fri · 5:30 AM – 8:00 PM</li>
-          <li>Saturday · 7:00 AM – 4:00 PM</li>
-          <li>Sunday · 8:00 AM – 2:00 PM</li>
+          <li>Mon â€“ Fri Â· 5:30 AM â€“ 8:00 PM</li>
+          <li>Saturday Â· 7:00 AM â€“ 4:00 PM</li>
+          <li>Sunday Â· 8:00 AM â€“ 2:00 PM</li>
         </ul>
       </div>
       <div>
@@ -315,7 +319,7 @@
     </div>
     <div class="border-t border-line">
       <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-mist sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-        <p>© 2026 APEX Personal Training. All rights reserved.</p>
+        <p>Â© 2026 APEX Personal Training. All rights reserved.</p>
         <p>Built for demo purposes.</p>
       </div>
     </div>
