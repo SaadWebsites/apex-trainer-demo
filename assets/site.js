@@ -148,9 +148,10 @@ function initBooking() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify({
-            _subject: `New appointment ${code} — ${payload.name}`,
+            _subject: `New booking: ${payload.name} · ${formatDate(payload.date)} ${payload.time}`,
             _template: 'table',
             _captcha: 'false',
+            _replyto: payload.email,
             Session: payload.session,
             Date: `${payload.date} ${payload.time}`,
             Location: payload.location,
