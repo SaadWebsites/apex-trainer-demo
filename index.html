@@ -62,7 +62,7 @@
   </header>
 
   <section class="relative flex min-h-[86vh] items-center overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45" onerror="this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1920&q=80'" />
+    <img src="assets/img/hero.jpg" data-fallback="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80" alt="" class="absolute inset-0 h-full w-full object-cover opacity-45" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
     <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30"></div>
     <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink to-transparent"></div>
     <div class="relative mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
@@ -109,7 +109,7 @@
     </div>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       <article class="group overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-volt/60">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Coach guiding a client through a lift" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <img src="assets/img/program-1.jpg" data-fallback="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Coach guiding a client through a lift" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="p-6">
           <h3 class="text-xl uppercase text-white">1-on-1 Coaching</h3>
           <p class="mt-2 text-sm leading-relaxed text-mist">Fully personalized programming, hands-on form correction and weekly adjustments.</p>
@@ -118,7 +118,7 @@
         </div>
       </article>
       <article class="group overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-volt/60">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Strength floor with racks" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <img src="assets/img/program-2.jpg" data-fallback="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Strength floor with racks" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="p-6">
           <h3 class="text-xl uppercase text-white">Small Group Training</h3>
           <p class="mt-2 text-sm leading-relaxed text-mist">Max 6 people. Coached strength blocks and circuits at a fraction of the price.</p>
@@ -127,7 +127,7 @@
         </div>
       </article>
       <article class="group overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-volt/60">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Athlete performing a barbell lift" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+        <img src="assets/img/program-3.jpg" data-fallback="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Athlete performing a barbell lift" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="p-6">
           <h3 class="text-xl uppercase text-white">Strength &amp; Conditioning</h3>
           <p class="mt-2 text-sm leading-relaxed text-mist">Barbell-focused athletic training for power, speed and bulletproof joints.</p>
@@ -136,7 +136,7 @@
         </div>
       </article>
       <article class="group overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-volt/60">
-        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Healthy prepared meal" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80'" />
+        <img src="assets/img/program-4.jpg" data-fallback="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80" alt="Healthy prepared meal" class="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="p-6">
           <h3 class="text-xl uppercase text-white">Nutrition Coaching</h3>
           <p class="mt-2 text-sm leading-relaxed text-mist">Habits, macros and meal planning that survives real life — no crash diets.</p>
@@ -176,7 +176,7 @@
   <section id="coach" class="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
     <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
       <div class="relative">
-        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=1000&q=80" alt="Coach Marcus Reed" class="aspect-[4/5] w-full rounded-3xl border border-line object-cover" onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1000&q=80'" />
+        <img src="assets/img/coach.jpg" data-fallback="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=1000&q=80" alt="Coach Marcus Reed" class="aspect-[4/5] w-full rounded-3xl border border-line object-cover" onerror="if(this.src!==this.dataset.fallback){this.src=this.dataset.fallback}" />
         <div class="absolute -bottom-5 left-5 rounded-2xl border border-line bg-panel px-5 py-4 shadow-xl">
           <p class="font-display text-2xl text-volt">12+ yrs</p>
           <p class="text-xs font-semibold uppercase tracking-wider text-mist">On the gym floor</p>

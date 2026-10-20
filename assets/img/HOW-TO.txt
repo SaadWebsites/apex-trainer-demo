@@ -1,0 +1,16 @@
+Drop the client's photos in this folder using these exact names:
+
+  hero.jpg        — big background photo for the home page (landscape, wide)
+  coach.jpg       — trainer/owner portrait (portrait orientation, tall)
+  program-1.jpg   — 1-on-1 coaching card image
+  program-2.jpg   — small group training card image
+  program-3.jpg   — strength & conditioning card image
+  program-4.jpg   — nutrition coaching card image
+
+Rules:
+- Use .jpg (or .png) — keep each file under ~500 KB so the site stays fast
+  (compress free at https://squoosh.app or https://tinypng.com)
+- Any photo not found here automatically shows the built-in stock photo instead,
+  so you can add them one at a time.
+- After adding files, if the site was already live, commit + push
+  (or re-drag the folder onto Netlify) and the new photos appear in ~1 minute.
