@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book an Appointment — APEX Personal Training</title>
+  <meta name="description" content="Book a free consult or training session with APEX Personal Training. Instant confirmation." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ink: #0a0a0b;
+      --color-panel: #121215;
+      --color-line: #26262b;
+      --color-mist: #a1a1aa;
+      --color-volt: #cdff3d;
+      --font-display: "Anton", ui-sans-serif, system-ui;
+      --font-sans: "Inter", ui-sans-serif, system-ui;
+    }
+  </style>
+  <style>
+    body { font-family: "Inter", ui-sans-serif, system-ui; background: #0a0a0b; }
+    h1, h2, h3, .font-display { font-family: "Anton", ui-sans-serif, system-ui; letter-spacing: .02em; }
+  </style>
+</head>
+<body class="bg-ink text-white antialiased">
+
+  <header class="sticky top-0 z-50 border-b border-line/70 bg-ink/85 backdrop-blur">
+    <div class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="flex h-9 w-9 items-center justify-center bg-volt font-display text-xl leading-none text-ink">A</span>
+        <span class="font-display text-xl tracking-widest text-white">APEX<span class="text-volt">.</span></span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-mist md:flex">
+        <a href="index.html#programs" class="transition-colors hover:text-white">Programs</a>
+        <a href="index.html#how" class="transition-colors hover:text-white">How it works</a>
+        <a href="index.html#coach" class="transition-colors hover:text-white">Coach</a>
+        <a href="index.html#results" class="transition-colors hover:text-white">Results</a>
+        <a href="book.html" class="text-volt">Book</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#booking" class="hidden rounded-full bg-volt px-5 py-2.5 text-sm font-bold text-ink transition-colors hover:bg-white sm:inline-block">Book a Session</a>
+        <button id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" class="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-white md:hidden">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-nav" class="hidden border-t border-line bg-ink px-4 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-semibold text-mist">
+        <a href="index.html#programs" class="hover:text-white">Programs</a>
+        <a href="index.html#how" class="hover:text-white">How it works</a>
+        <a href="index.html#coach" class="hover:text-white">Coach</a>
+        <a href="index.html#results" class="hover:text-white">Results</a>
+        <a href="book.html" class="text-volt">Book an Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="border-b border-line bg-panel">
+    <div class="mx-auto w-full max-w-7xl px-4 py-14 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-volt">Appointments</p>
+      <h1 class="mt-3 font-display text-4xl uppercase text-white sm:text-6xl">Book your session</h1>
+      <p class="mx-auto mt-4 max-w-xl text-mist">Pick a session, a time and leave your details. You'll get an instant confirmation code, and the coach is notified the moment you book.</p>
+    </div>
+  </section>
+
+  <section id="booking" class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_330px] lg:px-8 lg:py-16">
+
+    <div>
+      <div id="booking-panel" class="rounded-2xl border border-line bg-panel p-5 sm:p-8">
+        <form id="booking-form" novalidate>
+          <fieldset>
+            <legend class="text-lg font-bold text-white">1 · Session type</legend>
+            <p class="mt-1 text-sm text-mist">Choose what you'd like to book.</p>
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              <label class="relative cursor-pointer">
+                <input type="radio" name="session" value="Free Consult (30 min)" class="peer sr-only" />
+                <div class="min-h-24 rounded-xl border border-line bg-ink p-4 transition-colors peer-checked:border-volt peer-checked:bg-volt/10">
+                  <p class="text-sm font-bold text-white">Free Consult</p>
+                  <p class="mt-1 text-xs text-mist">Movement assessment + goal talk</p>
+                  <p class="mt-2 text-sm font-bold text-volt">30 min · Free</p>
+                </div>
+              </label>
+              <label class="relative cursor-pointer">
+                <input type="radio" name="session" value="1-on-1 Training Session (60 min)" class="peer sr-only" />
+                <div class="min-h-24 rounded-xl border border-line bg-ink p-4 transition-colors peer-checked:border-volt peer-checked:bg-volt/10">
+                  <p class="text-sm font-bold text-white">1-on-1 Training</p>
+                  <p class="mt-1 text-xs text-mist">Fully coached personal session</p>
+                  <p class="mt-2 text-sm font-bold text-volt">60 min · $75</p>
+                </div>
+              </label>
+              <label class="relative cursor-pointer">
+                <input type="radio" name="session" value="Small Group Training (60 min)" class="peer sr-only" />
+                <div class="min-h-24 rounded-xl border border-line bg-ink p-4 transition-colors peer-checked:border-volt peer-checked:bg-volt/10">
+                  <p class="text-sm font-bold text-white">Small Group Training</p>
+                  <p class="mt-1 text-xs text-mist">Max 6 people, coached circuit</p>
+                  <p class="mt-2 text-sm font-bold text-volt">60 min · $35</p>
+                </div>
+              </label>
+              <label class="relative cursor-pointer">
+                <input type="radio" name="session" value="Nutrition Coaching (45 min)" class="peer sr-only" />
+                <div class="min-h-24 rounded-xl border border-line bg-ink p-4 transition-colors peer-checked:border-volt peer-checked:bg-volt/10">
+                  <p class="text-sm font-bold text-white">Nutrition Coaching</p>
+                  <p class="mt-1 text-xs text-mist">Habits, macros, meal planning</p>
+                  <p class="mt-2 text-sm font-bold text-volt">45 min · $50</p>
+                </div>
+              </label>
+            </div>
+            <p id="err-session" class="mt-2 hidden text-xs font-semibold text-volt"></p>
+          </fieldset>
+
+          <hr class="my-8 border-line" />
+
+          <fieldset>
+            <legend class="text-lg font-bold text-white">2 · Date &amp; time</legend>
+            <p class="mt-1 text-sm text-mist">Sessions run Mon–Sun during opening hours.</p>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="f-date" class="mb-1.5 block text-sm font-medium text-white">Preferred date</label>
+                <input id="f-date" name="date" type="date" class="w-full rounded-lg border border-line bg-ink px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-mist focus:border-volt" />
+                <p id="err-date" class="mt-1.5 hidden text-xs font-semibold text-volt"></p>
+              </div>
+              <div>
+                <label for="f-time" class="mb-1.5 block text-sm font-medium text-white">Preferred time</label>
+                <select id="f-time" name="time" class="w-full rounded-lg border border-line bg-ink px-4 py-3 text-sm text-white outline-none transition-colors focus:border-volt">
+                  <option value="">Select a time</option>
+                  <option>6:00 AM</option>
+                  <option>7:00 AM</option>
+                  <option>8:00 AM</option>
+                  <option>9:00 AM</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>1:00 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>4:00 PM</option>
+                  <option>5:00 PM</option>
+                  <option>6:00 PM</option>
+                  <option>7:00 PM</option>
+                </select>
+                <p id="err-time" class="mt-1.5 hidden text-xs font-semibold text-volt"></p>
+              </div>
+            </div>
+            <div class="mt-5">
+              <p class="mb-2 text-sm font-medium text-white">Where</p>
+              <div class="grid gap-3 sm:grid-cols-3">
+                <label class="cursor-pointer">
+                  <input type="radio" name="location" value="In-Studio" class="peer sr-only" checked />
+                  <div class="rounded-lg border border-line bg-ink px-4 py-3 text-center text-sm font-semibold text-mist transition-colors peer-checked:border-volt peer-checked:bg-volt/10 peer-checked:text-white">In-Studio</div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="location" value="In-Home" class="peer sr-only" />
+                  <div class="rounded-lg border border-line bg-ink px-4 py-3 text-center text-sm font-semibold text-mist transition-colors peer-checked:border-volt peer-checked:bg-volt/10 peer-checked:text-white">In-Home</div>
+                </label>
+                <label class="cursor-pointer">
+                  <input type="radio" name="location" value="Online" class="peer sr-only" />
+                  <div class="rounded-lg border border-line bg-ink px-4 py-3 text-center text-sm font-semibold text-mist transition-colors peer-checked:border-volt peer-checked:bg-volt/10 peer-checked:text-white">Online</div>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <hr class="my-8 border-line" />
+
+          <fieldset>
+            <legend class="text-lg font-bold text-white">3 · About you</legend>
+            <p class="mt-1 text-sm text-mist">So the coach can prepare before you arrive.</p>
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="f-name" class="mb-1.5 block text-sm font-medium text-white">Full name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" class="w-full rounded-lg border border-line bg-ink px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-mist focus:border-volt" />
+                <p id="err-name" class="mt-1.5 hidden text-xs font-semibold text-volt"></p>
+              </div>
+              <div>
+                <label for="f-phone" class="mb-1.5 block text-sm font-medium text-white">Phone</label>
+                <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(555) 123-4567" class="w-full rounded-lg border border-line bg-ink px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-mist focus:border-volt" />
+                <p id="err-phone" class="mt-1.5 hidden text-xs font-semibold text-volt"></p>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="f-email" class="mb-1.5 block text-sm font-medium text-white">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" class="w-full rounded-lg border border-line bg-ink px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-mist focus:border-volt" />
+                <p id="err-email" class="mt-1.5 hidden text-xs font-semibold text-volt"></p>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="f-goal" class="mb-1.5 block text-sm font-medium text-white">Main goal</label>
+                <select id="f-goal" name="goal" class="w-full rounded-lg border border-line bg-ink px-4 py-3 text-sm text-white outline-none transition-colors focus:border-volt">
+                  <option value="">Select your main goal</option>
+                  <option>Fat loss</option>
+                  <option>Muscle gain</option>
+                  <option>Strength</option>
+                  <option>Sport performance</option>
+                  <option>Return from injury</option>
+                  <option>General health</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="f-notes" class="mb-1.5 block text-sm font-medium text-white">Anything else? <span class="font-normal text-mist">(optional)</span></label>
+                <textarea id="f-notes" name="notes" rows="3" placeholder="Injuries, schedule constraints, experience level…" class="w-full rounded-lg border border-line bg-ink px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-mist focus:border-volt"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <div id="form-error" class="mt-6 hidden rounded-lg border border-volt/50 bg-volt/10 px-4 py-3 text-sm font-semibold text-volt" role="alert"></div>
+
+          <div class="mt-7">
+            <button id="submit-btn" type="submit" class="w-full rounded-full bg-volt px-8 py-4 text-sm font-bold uppercase tracking-wider text-ink transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
+              Confirm Appointment
+            </button>
+            <p class="mt-3 text-xs text-mist">The studio is notified instantly and will confirm your slot by email.</p>
+          </div>
+        </form>
+      </div>
+
+      <div id="success-panel" class="hidden rounded-2xl border border-line bg-panel p-6 text-center sm:p-10">
+        <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-volt/15">
+          <svg viewBox="0 0 24 24" class="h-8 w-8 text-volt" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h2 class="mt-6 font-display text-3xl uppercase text-white sm:text-4xl">Booking Confirmed</h2>
+        <p class="mt-2 text-sm text-mist">You're all set, <span id="sum-first">friend</span>. Your booking is with the studio.</p>
+        <div class="mx-auto mt-5 inline-block rounded-lg bg-ink px-6 py-3 font-display text-xl tracking-widest text-volt" id="sum-code">APEX-00000</div>
+        <dl class="mx-auto mt-7 grid max-w-md grid-cols-1 gap-3 text-left sm:grid-cols-2">
+          <div class="rounded-lg border border-line bg-ink p-4">
+            <dt class="text-[11px] font-bold uppercase tracking-wider text-mist">Session</dt>
+            <dd id="sum-session" class="mt-1 text-sm font-semibold text-white">—</dd>
+          </div>
+          <div class="rounded-lg border border-line bg-ink p-4">
+            <dt class="text-[11px] font-bold uppercase tracking-wider text-mist">Date &amp; time</dt>
+            <dd id="sum-when" class="mt-1 text-sm font-semibold text-white">—</dd>
+          </div>
+          <div class="rounded-lg border border-line bg-ink p-4">
+            <dt class="text-[11px] font-bold uppercase tracking-wider text-mist">Location</dt>
+            <dd id="sum-location" class="mt-1 text-sm font-semibold text-white">—</dd>
+          </div>
+          <div class="rounded-lg border border-line bg-ink p-4">
+            <dt class="text-[11px] font-bold uppercase tracking-wider text-mist">Booked by</dt>
+            <dd id="sum-name" class="mt-1 text-sm font-semibold text-white">—</dd>
+          </div>
+        </dl>
+        <p class="mt-6 text-xs leading-relaxed text-mist">
+          Your booking details were emailed to the studio the moment you confirmed — the coach will reply to confirm your slot<span id="demo-note" class="hidden"> (demo mode — set <code class="text-volt">OWNER_EMAIL</code> in <code class="text-volt">assets/site.js</code> to send real emails)</span>. Arrive 10 minutes early and bring water.
+        </p>
+        <div class="mt-7">
+          <button id="book-again" type="button" class="rounded-full border border-line px-7 py-3 text-sm font-bold text-white transition-colors hover:border-volt hover:text-volt">Book another appointment</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="space-y-4">
+      <div class="rounded-xl border border-line bg-panel p-6">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-white">What happens next</h3>
+        <ol class="mt-4 space-y-4 text-sm text-mist">
+          <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-volt text-xs font-bold text-ink">1</span> You get an instant confirmation with your booking code.</li>
+          <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-volt text-xs font-bold text-ink">2</span> The coach is notified and reviews your request.</li>
+          <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-volt text-xs font-bold text-ink">3</span> You get a final confirm by email — see you there.</li>
+        </ol>
+      </div>
+      <div class="rounded-xl border border-line bg-panel p-6">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-white">Contact</h3>
+        <ul class="mt-4 space-y-3 text-sm text-mist">
+          <li><a href="tel:+15550182270" class="hover:text-volt">(555) 018-2270</a></li>
+          <li><a href="mailto:hello@apexpt.com" class="break-all hover:text-volt">hello@apexpt.com</a></li>
+          <li>214 Ironworks Ave, Austin, TX</li>
+        </ul>
+      </div>
+      <div class="rounded-xl border border-line bg-panel p-6">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-white">Hours</h3>
+        <ul class="mt-4 space-y-2.5 text-sm text-mist">
+          <li><span class="text-white">Mon – Fri</span><br />5:30 AM – 8:00 PM</li>
+          <li><span class="text-white">Saturday</span><br />7:00 AM – 4:00 PM</li>
+          <li><span class="text-white">Sunday</span><br />8:00 AM – 2:00 PM</li>
+        </ul>
+      </div>
+      <div class="rounded-xl border border-line bg-panel p-6">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-white">Prefer to talk?</h3>
+        <p class="mt-2 text-sm text-mist">Call the studio — we'll book you in over the phone in under two minutes.</p>
+      </div>
+    </aside>
+  </section>
+
+  <footer class="border-t border-line bg-ink">
+    <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-mist sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <p>© 2026 APEX Personal Training. All rights reserved.</p>
+      <p><a href="index.html" class="hover:text-volt">← Back to home</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
