@@ -1,13 +1,7 @@
 /* APEX site scripts — nav + booking form.
- *
- * OWNER EMAIL NOTIFICATION (free, no signup):
- * Bookings are emailed to OWNER_EMAIL through formsubmit.co.
- * One-time activation: the FIRST booking makes FormSubmit send an
- * activation email to OWNER_EMAIL — click the link inside it once,
- * then every future booking arrives in that inbox automatically.
- * Set OWNER_EMAIL to '' to run in demo mode (no email sent).
- */
-const OWNER_EMAIL = 'saadabdullah7599@gmail.com'
+ * Uses shared ApexConfig/ApexSubmit/ApexStore from assets/store.js
+ * (loaded before this file). Email notifications: see store.js. */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav()
@@ -137,43 +131,16 @@ function initBooking() {
       email: value('email'),
       notes: value('notes'),
       code,
+      source: 'form',
     }
 
     submitBtn.disabled = true
     submitBtn.textContent = 'Sending…'
 
     try {
-      if (OWNER_EMAIL) {
-        const res = await fetch(`https://formsubmit.co/ajax/${OWNER_EMAIL}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({
-            _subject: `New booking: ${payload.name} · ${formatDate(payload.date)} ${payload.time}`,
-            _template: 'table',
-            _captcha: 'false',
-            _replyto: payload.email,
-            Session: payload.session,
-            Date: `${payload.date} ${payload.time}`,
-            Location: payload.location,
-            Goal: payload.goal,
-            Name: payload.name,
-            Phone: payload.phone,
-            Email: payload.email,
-            Notes: payload.notes || '—',
-            'Booking code': code,
-          }),
-        })
-        const data = await res.json().catch(() => null)
-        const failed = !res.ok || data?.success === false || data?.success === 'false'
-        // A pending one-time activation email is not a booking failure.
-        const pendingActivation = failed && /activ/i.test(String(data?.message ?? ''))
-        if (failed && !pendingActivation) {
-          throw new Error('Booking could not be sent. Please try again or call the studio.')
-        }
-      } else {
-        await new Promise((r) => setTimeout(r, 600))
-        demoNote?.classList.remove('hidden')
-      }
+      const res = await window.ApexSubmit.send(payload)
+      window.ApexStore.save(payload)
+      if (res.demo) demoNote?.classList.remove('hidden')
 
       document.getElementById('sum-code').textContent = code
       document.getElementById('sum-first').textContent = payload.name.split(' ')[0]
@@ -181,6 +148,11 @@ function initBooking() {
       document.getElementById('sum-when').textContent = `${formatDate(payload.date)} · ${payload.time}`
       document.getElementById('sum-location').textContent = payload.location
       document.getElementById('sum-name').textContent = payload.name
+
+      const calBtn = document.getElementById('sum-calendar')
+      if (calBtn) calBtn.onclick = () => window.ApexIcs.download(payload)
+      const reviewBtn = document.getElementById('sum-review')
+      if (reviewBtn) reviewBtn.onclick = () => window.open(window.ApexConfig.REVIEW_LINK, '_blank')
 
       panel.classList.add('hidden')
       successPanel.classList.remove('hidden')

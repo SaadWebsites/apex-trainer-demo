@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owner Dashboard — APEX</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ink: #0a0a0b;
+      --color-panel: #121215;
+      --color-line: #26262b;
+      --color-mist: #a1a1aa;
+      --color-volt: #cdff3d;
+      --font-display: "Anton", ui-sans-serif, system-ui;
+      --font-sans: "Inter", ui-sans-serif, system-ui;
+    }
+  </style>
+  <style>
+    body { font-family: "Inter", ui-sans-serif, system-ui; background: #0a0a0b; }
+    h1, h2, h3, .font-display { font-family: "Anton", ui-sans-serif, system-ui; letter-spacing: .02em; }
+  </style>
+</head>
+<body class="bg-ink text-white antialiased">
+  <header class="sticky top-0 z-50 border-b border-line/70 bg-ink/85 backdrop-blur">
+    <div class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="flex h-9 w-9 items-center justify-center bg-volt font-display text-xl leading-none text-ink">A</span>
+        <span class="font-display text-xl tracking-widest text-white">APEX<span class="text-volt">.</span> <span class="text-sm font-sans font-semibold text-mist">Dashboard</span></span>
+      </a>
+      <nav class="flex items-center gap-5 text-sm font-semibold text-mist">
+        <a href="book.html" class="hover:text-white">Booking page</a>
+        <a href="portal.html" class="hover:text-white">Client portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
+    <div class="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.3em] text-volt">Owner inbox</p>
+        <h1 class="mt-2 font-display text-4xl uppercase text-white">Conversations &amp; bookings</h1>
+      </div>
+      <div class="mt-4 flex gap-2" role="tablist">
+        <button data-filter="all" class="filter-btn rounded-full border border-line px-4 py-2 text-sm font-semibold text-mist">All</button>
+        <button data-filter="today" class="filter-btn rounded-full border border-line px-4 py-2 text-sm font-semibold text-mist">Today</button>
+        <button data-filter="upcoming" class="filter-btn rounded-full border border-line px-4 py-2 text-sm font-semibold text-mist">Upcoming</button>
+        <button data-filter="chats" class="filter-btn rounded-full border border-line px-4 py-2 text-sm font-semibold text-mist">AI chats</button>
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-2xl border border-line bg-panel p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-mist">Total bookings</p>
+        <p id="stat-total" class="mt-2 font-display text-4xl text-volt">0</p>
+      </div>
+      <div class="rounded-2xl border border-line bg-panel p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-mist">Today</p>
+        <p id="stat-today" class="mt-2 font-display text-4xl text-volt">0</p>
+      </div>
+      <div class="rounded-2xl border border-line bg-panel p-5">
+        <p class="text-xs font-bold uppercase tracking-wider text-mist">Awaiting review ask</p>
+        <p id="stat-reviews" class="mt-2 font-display text-4xl text-volt">0</p>
+      </div>
+    </div>
+
+    <p class="mt-6 rounded-lg border border-line bg-panel px-4 py-3 text-xs text-mist">
+      <b class="text-white">How this works:</b> every live booking also lands in your email instantly (FormSubmit).
+      This dashboard keeps a local demo inbox on this device — bookings you make here are visible here.
+      Each row has a one-tap review request you can paste to the client after their session.
+    </p>
+
+    <div id="bookings-list" class="mt-6 space-y-3"></div>
+    <div id="chats-list" class="mt-6 hidden space-y-3"></div>
+    <p id="empty" class="mt-10 hidden text-center text-sm text-mist">Nothing here yet — bookings will appear as they come in.</p>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-mist sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <p>© 2026 APEX Personal Training. Owner dashboard — not indexed by search engines.</p>
+      <p><a href="index.html" class="hover:text-volt">← Back to site</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/store.js"></script>
+  <script src="assets/dashboard.js"></script>
+</body>
+</html>

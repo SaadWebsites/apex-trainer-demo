@@ -243,7 +243,9 @@
         <p class="mt-6 text-xs leading-relaxed text-mist">
           Your booking details were emailed to the studio the moment you confirmed — the coach will reply to confirm your slot<span id="demo-note" class="hidden"> (demo mode — set <code class="text-volt">OWNER_EMAIL</code> in <code class="text-volt">assets/site.js</code> to send real emails)</span>. Arrive 10 minutes early and bring water.
         </p>
-        <div class="mt-7">
+        <div class="mt-7 flex flex-wrap justify-center gap-3">
+          <button id="sum-calendar" type="button" class="rounded-full bg-volt px-7 py-3 text-sm font-bold text-ink transition-colors hover:bg-white">📅 Add to calendar (with 1h alarm)</button>
+          <button id="sum-review" type="button" class="rounded-full border border-line px-7 py-3 text-sm font-bold text-white transition-colors hover:border-volt hover:text-volt">⭐ Loved it? Leave a review</button>
           <button id="book-again" type="button" class="rounded-full border border-line px-7 py-3 text-sm font-bold text-white transition-colors hover:border-volt hover:text-volt">Book another appointment</button>
         </div>
       </div>
@@ -284,10 +286,12 @@
   <footer class="border-t border-line bg-ink">
     <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-6 text-xs text-mist sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
       <p>© 2026 APEX Personal Training. All rights reserved.</p>
-      <p><a href="index.html" class="hover:text-volt">← Back to home</a></p>
+      <p><a href="index.html" class="hover:text-volt">← Back to home</a> · <a href="portal.html" class="hover:text-volt">My appointments</a> · <a href="dashboard.html" class="hover:text-volt">Owner dashboard</a></p>
     </div>
   </footer>
 
+  <script src="assets/store.js"></script>
   <script src="assets/site.js"></script>
+  <script src="assets/chat.js"></script>
 </body>
 </html>
